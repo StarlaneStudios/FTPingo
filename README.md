@@ -1,6 +1,27 @@
-# vue-project
+<p align="center">
+  <img src="https://github.com/StarlaneStudios/FTPingo/blob/main/.github/icon.png?raw=true" width="150px" />
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+<center>
+<h1>
+    FTPingo
+</h1>
+<h4>
+    The lightweight Open-Source cross-platform FTP client
+</h4>
+
+<br>
+
+<p>
+    <img src="https://img.shields.io/github/package-json/v/StarlaneStudios/FTPingo">
+    <img src="https://img.shields.io/github/repo-size/StarlaneStudios/FTPingo">
+</p>
+</center>
+
+## 🚧 **DISCLAIMER** 🚧
+This project is currently in heavy development and is still lacking many features. Do not use in production!
+
+Once the project is in a more stable shape, contribution guidelines will also be published.
 
 ## Recommended IDE Setup
 
