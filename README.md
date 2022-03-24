@@ -1,22 +1,20 @@
 <p align="center">
-  <img src="https://github.com/StarlaneStudios/FTPingo/blob/main/.github/icon.png?raw=true" width="150px" />
+  <img src="https://github.com/StarlaneStudios/FTPingo/blob/main/.github/icon.png?raw=true" width="200px" />
 </p>
 
-<center>
-<h1>
+<h1 align="center">
     FTPingo
 </h1>
-<h4>
+<h4 align="center">
     The lightweight Open-Source cross-platform FTP client
 </h4>
 
 <br>
 
-<p>
+<p align="center">
     <img src="https://img.shields.io/github/package-json/v/StarlaneStudios/FTPingo">
     <img src="https://img.shields.io/github/repo-size/StarlaneStudios/FTPingo">
 </p>
-</center>
 
 ## 🚧 **DISCLAIMER** 🚧
 This project is currently in heavy development and is still lacking many features. Do not use in production!
