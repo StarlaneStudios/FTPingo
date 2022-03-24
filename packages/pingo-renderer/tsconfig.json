@@ -2,18 +2,18 @@
     "extends": "@vue/tsconfig/tsconfig.web.json",
     "include": [
         "env.d.ts",
-        "src/**/*",
-        "src/**/*.vue"
+        "packages/pingo-renderer/src/**/*",
+        "packages/pingo-renderer/src/**/*.vue"
     ],
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "src",
+        "rootDir": "packages/pingo-renderer/src",
         "baseUrl": ".",
         "allowJs": true,
         "declaration": true,
         "paths": {
-            "~/": [ "src/index" ],
-            "~/*": [ "src/*" ]
+            "~/": [ "packages/pingo-renderer/src/index" ],
+            "~/*": [ "packages/pingo-renderer/src/*" ]
         }
     },
     "references": [

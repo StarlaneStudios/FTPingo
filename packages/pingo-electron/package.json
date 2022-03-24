@@ -1,0 +1,16 @@
+{
+   "name": "@ftpingo/electron",
+   "version": "0.0.0",
+   "private": true,
+   "scripts": {},
+   "devDependencies": {
+      "nodemon": "^2.0.15",
+      "gulp": "^4.0.2",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-ts-alias": "^2.0.0",
+        "gulp-typescript": "^6.0.0-alpha.1"
+   },
+   "dependencies": {
+      "jsftp": "^2.1.3"
+   }
+}

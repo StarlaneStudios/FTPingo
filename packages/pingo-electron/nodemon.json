@@ -1,0 +1,9 @@
+{
+    "watch": "src",
+    "ext": "ts,graphql",
+    "exec": "yarn build && yarn start",
+	"signal": "SIGKILL",
+	"env": {
+		"NODE_ENV": "development"
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+        "lib": ["esnext"],
+        "strict": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+		"outDir": "dist",
+		"rootDir": "src",
+		"baseUrl": ".",
+		"sourceMap": true,
+		"declaration": true,
+		"strictPropertyInitialization": false,
+		"emitDecoratorMetadata": true,
+		"paths": {
+			"~/*": [
+				"src/*"
+			]
+		},
+		"types": [
+			"@nuxt/types"
+		]
+	},
+	"include": [ "src" ],
+	"exclude": [ "node_modules", "dist" ]
+}
