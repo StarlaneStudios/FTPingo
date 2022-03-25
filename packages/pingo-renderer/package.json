@@ -4,7 +4,7 @@
     "private": true,
 	"scripts": {
         "watch": "vite",
-        "build": "vue-tsc --noEmit && vite build",
+        "build": "vue-tsc --noEmit && vite build --emptyOutDir",
         "preview": "vite preview --port 5050",
         "typecheck": "vue-tsc --noEmit"
     },
