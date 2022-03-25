@@ -10,7 +10,8 @@
     ],
     "packageManager": "yarn@1.22.17",
     "scripts": {
-        
+        "lint": "eslint . --ext .vue,.js --ignore-path .gitignore",
+        "lint:fix": "eslint . --ext .vue,.ts --fix --ignore-path .gitignore"
     },
     "devDependencies": {
         "@rushstack/eslint-patch": "^1.1.0",

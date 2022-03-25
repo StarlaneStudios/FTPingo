@@ -1,4 +1,4 @@
-const {series, parallel, src, dest} = require('gulp');
+const {series, dest} = require('gulp');
 const alias = require('gulp-ts-alias');
 const ts = require('gulp-typescript');
 const sm = require('gulp-sourcemaps');

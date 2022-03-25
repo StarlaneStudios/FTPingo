@@ -3,12 +3,10 @@
 	"version": "0.0.0",
     "private": true,
 	"scripts": {
-        "dev": "vite",
-        "typecheck": "vue-tsc --noEmit",
+        "watch": "vite",
         "build": "vue-tsc --noEmit && vite build",
         "preview": "vite preview --port 5050",
-        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-        "lint:fix": "eslint . --ext .vue,.ts --ignore-path .gitignore"
+        "typecheck": "vue-tsc --noEmit"
     },
     "dependencies": {
         "pinia": "^2.0.11",

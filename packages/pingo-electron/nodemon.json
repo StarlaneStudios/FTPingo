@@ -1,6 +1,6 @@
 {
     "watch": "src",
-    "ext": "ts,graphql",
+    "ext": "ts",
     "exec": "yarn build && yarn start",
 	"signal": "SIGKILL",
 	"env": {
