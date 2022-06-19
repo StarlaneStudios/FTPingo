@@ -6,7 +6,6 @@ import { FiDatabase, FiFolder, FiSettings } from "react-icons/fi";
 import { GoTerminal } from "react-icons/go";
 import { IconType } from "@react-icons/all-files";
 import { useCallback, useEffect, useRef } from "react";
-import AppImage from "../../assets/images/app-img.png";
 
 interface ISidebarItem {
     icon: IconType;
@@ -25,7 +24,7 @@ function DefaultHeader() {
             <img
                 className="default-header__app-img"
                 alt="FTPingo"
-                src={AppImage}
+                src="/images/app-img.png"
                 onDragStart={(e) => e.preventDefault()}
             />
             <b className="default-header__app-title">
