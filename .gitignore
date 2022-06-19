@@ -1,25 +1,6 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Editor directories and files
-.idea
-.vscode/*
-!.vscode/extensions.json
-!.vscode/tasks.json
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Misc
 node_modules
-.DS_Store
-dist
-dist-web
+build
+
+# Added by cargo
+
+/target

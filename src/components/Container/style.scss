@@ -1,0 +1,11 @@
+@import "../../scss/mixins/breakpoints";
+
+.container {
+	width: min(calc(100% - 2em), 600px);
+	margin-inline: auto;
+}
+
+.container-fluid {
+	width: calc(100% - 2em);
+	margin-inline: auto;
+}

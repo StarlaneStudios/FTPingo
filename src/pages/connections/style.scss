@@ -1,0 +1,69 @@
+@import "../../scss/mixins/display", "../../scss/mixins/spacing", "../../scss/mixins/dimension";
+
+.connections-page {
+    @include grid(290px auto, calc(100vh - 40px));
+}
+
+.connections-list {
+    @include flex-column();
+    background-color: var(--connection-sidebar, lighten(#292929, 3.5%)); 
+
+    &__item {
+        @include margin(top, 2);
+        @include flex(center);
+        @include padding(inline, 4);
+		height: 44px;
+
+        svg:first-child {
+            @include margin(right, 2);
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        &:hover {
+            background-color: lighten(#292929, 10.5%);
+        }
+    }
+}
+
+.connections-list__group {
+    
+    @include margin(top, 2);
+
+    header {
+        @include padding(inline, 4);
+        @include flex(center);
+        background-color: #232323;
+        height: 44px;
+    }
+
+    header > h2 {
+        @include margin(left, 2);
+        font-size: 1rem;
+    }
+
+    &-create__connection {
+        @include size(20px, 20px);
+        @include flex(center, center);
+        background-color: var(--toolbar-close-color);
+        border: none;
+        border-radius: 4px;
+    }
+
+    &-item {
+        @include padding(inline, 4);
+        @include padding(block, 2);
+        @include flex(center);
+
+        svg {
+            @include margin(right, 2);
+        }
+
+        &:hover {
+            background-color: lighten(#292929, 10.5%);
+        }
+    }
+}

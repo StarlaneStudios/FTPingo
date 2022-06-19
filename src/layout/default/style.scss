@@ -1,0 +1,112 @@
+@use "sass:list";
+@import "../../scss/mixins/display", "../../scss/mixins/position", "../../scss/mixins/dimension",
+"../../scss/mixins/spacing", "../../scss/mixins/border";
+
+.default-header {
+	@include flex(center);
+	@include padding(a, 2);
+	background-color: var(--toolbar);
+	user-select: none;
+
+	&__app-img {
+		@include size(24px, null, list.slash(1, 1));
+		@include margin(right, 2);
+	}
+
+	.btn-minimize {
+		@include margin(right, 2);
+		background-color: var(--toolbar-minimize-color);
+
+		&:hover {
+			background-color: darken(#454555, 5%);
+		}
+	}
+
+	.btn-minimize>svg {
+		margin-top: -10px;
+	}
+
+	.btn-close {
+		background-color: var(--error);
+
+		svg {
+			fill: var(--white);
+		}
+
+		&:hover {
+			background-color: darken(#f6585b, 5%);
+		}
+	}
+
+	.btn-minimize,
+	.btn-close {
+		@include flex(center, center);
+		@include size(24px, null, list.slash(1, 1));
+		@include border-radius-without-border(3px);
+		cursor: pointer;
+		color: white;
+	}
+}
+
+.default-layout__container {
+	@include grid(60px auto);
+}
+
+.navigation {
+	@include flex-column();
+	@include padding(a, 2);
+	background-color: var(--navigation);
+	height: calc(100vh - 40px);
+	z-index: 2;
+
+	.navigation-item {
+		@include flex(center, center, null, null);
+		@include padding(a, 3);
+		transition: 0.25s background-color ease;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		color: white;
+
+		&:not(:last-child) {
+			@include margin(bottom, 2);
+		}
+	}
+
+	.navigation-item:last-child {
+		@include margin-auto(top);
+	}
+
+	.navigation-item__active,
+	.navigation-item:hover {
+		background-color: var(--error, #f6585b);
+	}
+}
+
+.default-layout__container>main {
+	background-color: var(--html-background-color);
+	max-height: calc(100vh - 40px);
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+}
+
+body[data-theme="light"] {
+
+	.btn-minimize {
+		background-color: var(--light);
+		&:hover {
+			background-color: rgba(var(--light), 100);
+		}
+	}
+
+	.btn-close {
+		
+	}
+
+	.navigation-item__active>svg,
+	.navigation-item:hover>svg {
+		filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(108%) contrast(103%);
+	}
+}

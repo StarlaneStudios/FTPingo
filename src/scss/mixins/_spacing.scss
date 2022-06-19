@@ -1,0 +1,23 @@
+@mixin margin($side, $space) {
+    @if $side == null or $side == a {
+        margin: $space * 0.25rem;
+    } @else {
+        margin-#{$side}: $space * 0.25rem;
+    }
+}
+
+@mixin margin-auto($side) {
+    @if $side == null or $side == a {
+        margin: auto;
+    } @else {
+        margin-#{$side}: auto;
+    }
+}
+
+@mixin padding($side, $space) {
+    @if $side == null or $side == a {
+        padding: $space * 0.25rem;
+    } @else {
+        padding-#{$side}: $space * 0.25rem;
+    }
+}

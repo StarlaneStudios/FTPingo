@@ -1,0 +1,14 @@
+@mixin size ($width: null, $height: null, $aspect: null) {
+    
+    @if $width != null {
+        width: $width;
+    }
+
+    @if $height != null {
+        height: $height;
+    }
+
+    @if $aspect != null {
+        aspect-ratio: $aspect;
+    }
+}

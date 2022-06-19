@@ -1,0 +1,18 @@
+.input {
+
+	display: flex;
+	align-items: center;
+	padding: 5px 7px;
+	border: 1px solid #ccc;
+
+	input {
+		background-color: transparent;
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			font-size: 0.95rem;
+			font-weight: lighter;
+		}
+	}
+}

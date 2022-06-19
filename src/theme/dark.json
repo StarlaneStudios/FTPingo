@@ -1,0 +1,17 @@
+{
+	"primary": "#4e7cff",
+	"secondary": "#2d5672",
+	"success": "#0fcc5b",
+	"warning": "#ffa615",
+	"error": "#f6585b",
+	"info": "#0fccc7",
+	"dark": "#1d1d2b",
+	"light": "#dee8f3",
+	"white": "#ffffff",
+	"black": "#000000",
+
+	"background": "#3B3B3B",
+	"text": "#fff",
+
+	"toolbar": "#181818"
+}

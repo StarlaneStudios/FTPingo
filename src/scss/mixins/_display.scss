@@ -1,0 +1,40 @@
+@mixin flex($align: null, $justify: null, $direction: null, $wrap: null) {
+    display: flex;
+
+    @if $align != null {
+        align-items: $align;
+    }
+    
+    @if $justify != null {
+        justify-content: $justify;
+    }
+
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+
+    @if $wrap != null {
+        flex-wrap: $wrap;
+    }
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin grid($template-column: null, $template-row: null, $gap: null) {
+    display: grid;
+
+    @if $template-column != null {
+        grid-template-columns: $template-column;
+    }
+
+    @if $template-row != null {
+        grid-template-rows: $template-row;
+    }
+
+    @if $gap != null {
+        grid-gap: $gap;
+    }
+}

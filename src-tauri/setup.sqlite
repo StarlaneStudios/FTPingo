@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS ftp_connections (
+    connection_id INTEGER PRIMARY KEY,
+    connection_host TEXT NOT NULL,
+    connection_port INTEGER NOT NULL,
+    connection_username TEXT NOT NULL,
+    connection_password TEXT NOT NULL,
+    folder_id INTEGER NULL,
+    FOREIGN KEY (folder_id)
+        REFERENCES ftp_groups (folder_id)
+            ON DELETE SET NULL
+);
+
+CREATE TABLE IF NOT EXISTS ftp_groups (
+    folder_id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+-- insert default values for the ftp_groups table
+INSERT INTO ftp_groups (name) VALUES ('default');
+
+CREATE TABLE IF NOT EXISTS settings (
+    theme TEXT NOT NULL,
+    language TEXT NOT NULL
+);
+
+-- insert default values for the settings table
+INSERT INTO settings (theme, language) VALUES ('light', 'en-gb');
+
+CREATE TABLE IF NOT EXISTS languages (
+    language_id INTEGER PRIMARY KEY,
+    language_name TEXT NOT NULL,
+    language_code TEXT NOT NULL
+);

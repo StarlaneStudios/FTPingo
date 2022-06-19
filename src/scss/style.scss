@@ -1,0 +1,28 @@
+@import "font";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    shape-rendering: geometricPrecision !important;
+    font-smooth: always;
+	color: var(--text);
+}
+
+html, body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--background);
+    height: 100vh;
+}
+
+body {
+	background-attachment: fixed;
+	touch-action: none;
+}
+
+button:not(:disabled),
+button.is-not-interactable {
+    cursor: pointer;
+}

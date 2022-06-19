@@ -1,0 +1,21 @@
+@import "../data/breakpoints";
+
+@mixin break-up($breakpoint) {
+    $breakpoint-width: map-get($breakpoint, $breakpoints);
+    @media (min-width: $breakpoint-width) {
+        @content;
+    }
+}
+
+@mixin break-down($breakpoint) {
+    $breakpoint-width: map-get($breakpoint, $breakpoints);
+    @media (max-width: $breakpoint-width) {
+        @content;
+    }
+}
+
+@mixin break-between($breakpoint-a, $breakpoint-b) {
+    @media (min-width: $breakpoint-a) and (max-width: $breakpoint-b) {
+        @content;
+    }
+}

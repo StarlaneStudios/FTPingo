@@ -1,0 +1,8 @@
+@mixin border ($width: 1px, $style: solid, $color: #000) {
+    border: $width $style $color;
+}
+
+@mixin border-radius-without-border($radius) {
+    border: none;
+    border-radius: $radius;
+}
