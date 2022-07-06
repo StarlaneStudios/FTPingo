@@ -1,12 +1,13 @@
 @use "sass:list";
 @import "../../scss/mixins/display", "../../scss/mixins/position", "../../scss/mixins/dimension",
-"../../scss/mixins/spacing", "../../scss/mixins/border";
+"../../scss/mixins/spacing", "../../scss/mixins/border", "../../scss/theme";
 
 .default-header {
 	@include flex(center);
 	@include padding(a, 2);
-	background-color: var(--toolbar);
+	background-color: darken($dark, 3%);
 	user-select: none;
+    color: white;
 
 	&__app-img {
 		@include size(24px, null, list.slash(1, 1));

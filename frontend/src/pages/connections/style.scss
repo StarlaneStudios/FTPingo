@@ -1,4 +1,5 @@
 @import "../../scss/mixins/display", "../../scss/mixins/spacing", "../../scss/mixins/dimension";
+@import "../../scss/theme";
 
 .connections-page {
     @include grid(290px auto, calc(100vh - 40px));
@@ -10,7 +11,7 @@
 
 .connections-list {
     @include flex-column();
-    background-color: var(--connection-sidebar, lighten(#292929, 3.5%));
+    background-color: lighten($dark, 1%);
 
     &__item {
         @include margin(top, 2);

@@ -1,4 +1,4 @@
-@import "font";
+@import "font", "theme";
 
 *,
 *::before,
@@ -13,7 +13,7 @@
 
 html, body {
     font-family: 'Rubik', sans-serif;
-    background-color: var(--background);
+    background-color: var(--dark);
     height: 100vh;
 }
 

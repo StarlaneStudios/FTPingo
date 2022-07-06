@@ -12,6 +12,7 @@ const routes = (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<DefaultLayout />}>
+                <Route index element={<ConnectionsPage />} />
                 <Route path="/connections" element={<ConnectionsPage />}>
                     <Route path="group/create" element={<ConnectionGroupEdit />} />
                 </Route>
