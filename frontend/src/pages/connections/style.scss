@@ -2,17 +2,22 @@
 
 .connections-page {
     @include grid(290px auto, calc(100vh - 40px));
+
+    &__container {
+        padding: 1rem;
+    }
 }
 
 .connections-list {
     @include flex-column();
-    background-color: var(--connection-sidebar, lighten(#292929, 3.5%)); 
+    background-color: var(--connection-sidebar, lighten(#292929, 3.5%));
 
     &__item {
         @include margin(top, 2);
         @include flex(center);
         @include padding(inline, 4);
 		height: 44px;
+        text-decoration: none;
 
         svg:first-child {
             @include margin(right, 2);

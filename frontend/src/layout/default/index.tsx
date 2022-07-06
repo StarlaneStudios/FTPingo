@@ -49,7 +49,7 @@ function DefaultHeader() {
 function DefaultSidebar() {
 
     const items = useRef<ISidebarItem[]>([
-        { icon: FiDatabase, to: "/", needConnection: false },
+        { icon: FiDatabase, to: "/connections", needConnection: false },
         { icon: FiFolder, to: "/explorer", needConnection: true },
         { icon: GoTerminal, to: "/terminal", needConnection: true },
         { icon: FiSettings, to: "/settings", needConnection: true  }

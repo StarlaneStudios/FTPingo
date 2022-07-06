@@ -1,11 +1,6 @@
 import classNames from "classnames";
-import { 
-	type ChangeEventHandler, 
-	useCallback, 
-	useState 
-} from "react";
+import {  type ChangeEventHandler, useCallback, useState } from "react";
 import { MdLockOpen } from "react-icons/md";
-import type { EmailInputProps, InputProps, NumberInputProps } from "./declerations";
 import "./style.scss";
 
 export function TextInput(props: InputProps<string>) {
@@ -21,7 +16,7 @@ export function TextInput(props: InputProps<string>) {
 		"input": true,
 		"input__text": true,
 		[`${props.className}`]: true,
-	})
+	});
 
 	return (
 		<>
