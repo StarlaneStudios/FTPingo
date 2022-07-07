@@ -12,6 +12,7 @@
 .connections-list {
     @include flex-column();
     background-color: lighten($dark, 1%);
+    color: white;
 
     &__item {
         @include margin(top, 2);
@@ -52,9 +53,9 @@
     }
 
     &-create__connection {
-        @include size(20px, 20px);
+        @include size(22px, 23px);
         @include flex(center, center);
-        background-color: var(--toolbar-close-color);
+        background-color: lighten($dark, 10%);
         border: none;
         border-radius: 4px;
     }

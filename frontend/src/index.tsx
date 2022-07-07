@@ -23,13 +23,14 @@ const routes = (
     </BrowserRouter>
 );
 
-function Application() {
+const Application = () => (
+    <StrictMode>
+        {routes}
+    </StrictMode>
+);
 
-    return (
-        <StrictMode>
-            {routes}
-        </StrictMode>
-    );
+const root = document.getElementById('root');
+
+if (root !== null) {
+    createRoot(root).render(<Application />);
 }
-
-createRoot(document.getElementById('root')!).render(<Application />);

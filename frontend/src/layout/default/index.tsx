@@ -5,7 +5,8 @@ import { MdClose, MdMinimize } from "react-icons/md";
 import { FiDatabase, FiFolder, FiSettings } from "react-icons/fi";
 import { GoTerminal } from "react-icons/go";
 import { IconType } from "@react-icons/all-files";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
+import { WindowMinimise } from "../../../wailsjs/runtime/runtime";
 
 interface ISidebarItem {
     icon: IconType;
@@ -14,10 +15,6 @@ interface ISidebarItem {
 }
 
 function DefaultHeader() {
-
-    const minimiseWindow = useCallback(() => {
-        // WindowMinimise();
-    }, []);
 
     return (
         <header data-wails-drag className="default-header">
@@ -33,7 +30,7 @@ function DefaultHeader() {
             <Spacer />
             <button
                 className="btn-minimize"
-                onClick={minimiseWindow}
+                onClick={() => WindowMinimise()}
             >
                 <MdMinimize size="1rem" />
             </button>
@@ -49,10 +46,10 @@ function DefaultHeader() {
 function DefaultSidebar() {
 
     const items = useRef<ISidebarItem[]>([
-        { icon: FiDatabase, to: "/connections", needConnection: false },
+        { icon: FiDatabase, to: "/", needConnection: false },
         { icon: FiFolder, to: "/explorer", needConnection: true },
         { icon: GoTerminal, to: "/terminal", needConnection: true },
-        { icon: FiSettings, to: "/settings", needConnection: true  }
+        { icon: FiSettings, to: "/settings", needConnection: true }
     ]);
 
     return (
