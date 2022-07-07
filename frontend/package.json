@@ -8,9 +8,6 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@mantine/core": "^4.2.12",
-        "@mantine/hooks": "^4.2.12",
-        "@mantine/next": "^4.2.12",
         "@react-icons/all-files": "^4.1.0",
         "classnames": "^2.3.1",
         "crypto-js": "^4.1.1",
