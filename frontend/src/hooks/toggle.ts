@@ -1,11 +1,16 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useToggle<T>(initial: T, options: [T, T]) {
     const [value, setValue] = useState(initial);
 
-    const toggle = useCallback(() => {
+    const toggle = useCallback((state?: T) => {
         
         setValue((current: T) => {
+
+			if(state !== undefined) {
+				return state;
+			}
+
             if (current === options[0]) {
                 return options[1];
             }
