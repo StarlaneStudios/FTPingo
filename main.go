@@ -6,8 +6,6 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 
-	"database/sql"
-
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -15,17 +13,6 @@ import (
 var assets embed.FS
 
 func main() {
-
-	// Initializing the sqlite database
-	db, _ := sql.Open("sqlite3", "./database.db")
-
-	stmt, db_error := db.Prepare("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)")
-
-	if db_error != nil {
-		panic(db_error)
-	}
-
-	stmt.Exec()
 
 	// Create an instance of the app structure
 	app := NewApp()

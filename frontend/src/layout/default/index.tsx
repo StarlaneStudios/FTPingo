@@ -1,18 +1,11 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { matchPath, NavLink, Outlet } from "react-router-dom";
 import Spacer from "../../components/spacer";
-import "./style.scss";
 import { MdClose, MdMinimize } from "react-icons/md";
 import { FiDatabase, FiFolder, FiSettings } from "react-icons/fi";
 import { GoTerminal } from "react-icons/go";
-import { IconType } from "@react-icons/all-files";
-import { useCallback, useRef } from "react";
-import { WindowMinimise } from "../../../wailsjs/runtime/runtime";
-
-interface ISidebarItem {
-    icon: IconType;
-    to: string;
-    needConnection: boolean;
-}
+import { WindowMinimise, Quit } from "../../../wailsjs/runtime/runtime";
+import "./style.scss";
+import { useMemo } from "react";
 
 function DefaultHeader() {
 
@@ -24,47 +17,50 @@ function DefaultHeader() {
                 src="/images/app-img.png"
                 onDragStart={(e) => e.preventDefault()}
             />
-            <b className="default-header__app-title">
-                FTPINGO
-            </b>
+            <b className="default-header__app-title">FTPINGO</b>
             <Spacer />
-            <button
-                className="btn-minimize"
-                onClick={() => WindowMinimise()}
-            >
+            <button className="btn-minimize" onClick={() => WindowMinimise()}>
                 <MdMinimize size="1rem" />
             </button>
-            <button
-                className="btn-close"
-            >
+            <button className="btn-close" onClick={() => Quit()}>
                 <MdClose size="1rem" />
             </button>
         </header>
     );
 };
 
+const SIDEBAR_NAVIGATION: ISidebarItem[] = [
+    { icon: FiDatabase, to: "/connections", needConnection: false },
+    // { icon: FiFolder, to: "/explorer", needConnection: true },
+    { icon: GoTerminal, to: "/terminal", needConnection: true },
+    { icon: FiSettings, to: "/settings", needConnection: true }
+];
+
 function DefaultSidebar() {
 
-    const items = useRef<ISidebarItem[]>([
-        { icon: FiDatabase, to: "/", needConnection: false },
-        { icon: FiFolder, to: "/explorer", needConnection: true },
-        { icon: GoTerminal, to: "/terminal", needConnection: true },
-        { icon: FiSettings, to: "/settings", needConnection: true }
-    ]);
-
-    return (
-        <aside className="navigation" role="navigation">
-            {
-                items.current.map(({ icon, to }, index) => (
+    const navigation = useMemo<JSX.Element>(() => {
+        return <>{
+            SIDEBAR_NAVIGATION.map(({ icon, to }, index) => {
+                const isActive = matchPath({
+                    path: to
+                }, location.pathname)
+                const classname = isActive ? "navigation-item navigation-item__active" : "navigation-item";
+                return (
                     <NavLink
                         key={index}
-                        className={({ isActive }) => isActive ? "navigation-item navigation-item__active" : "navigation-item"}
+                        className={classname}
                         to={to}
                     >
                         {icon({ size: 20 })}
                     </NavLink>
-                ))
-            }
+                );
+            })
+        }</>; 
+    }, []);
+
+    return (
+        <aside className="navigation" role="navigation">
+            {navigation}
         </aside>
     );
 }
