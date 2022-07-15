@@ -1,11 +1,10 @@
 import { TextInput } from "../../components/Input";
 import useObject from "../../hooks/object";
-import { FTPGroup } from "../../../typings";
 import "./modules/group.scss";
 
 export default function ConnectionGroupEdit() {
 
-    const { current, modify } = useObject<FTPGroup>({
+    const { current, modify } = useObject<any>({
         id: "",
         name: ""
     });
@@ -14,7 +13,7 @@ export default function ConnectionGroupEdit() {
         <div className="connection-group__edit">
             <TextInput
                 placeholder="test"
-                onChange={(e) => modify({ name: current.name + e.target.value })}
+                onChange={(e) => modify({ name: current.name + e })}
             />
 
             {JSON.stringify(current)}

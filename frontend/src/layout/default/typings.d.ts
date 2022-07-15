@@ -1,5 +1,5 @@
 interface ISidebarItem {
-    icon: IconType;
+    icon: any;
     to: string;
     needConnection: boolean;
 }

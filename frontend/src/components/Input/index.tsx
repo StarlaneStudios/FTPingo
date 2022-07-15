@@ -1,24 +1,13 @@
-import classNames from "classnames";
-import { type ChangeEventHandler, useCallback, useState } from "react";
-import { InputProps } from "./typings";
-import "./style.scss";
+import style from "./style.module.scss";
 
 export function TextInput(props: InputProps<string>) {
 
-    const [value, setValue] = useState(props.value || props.defaultValue || "");
-
-    const classes = classNames({
-        "input": true,
-        "input__text": true,
-        [`${props.className}`]: true
-    });
-
     return (
-        <div className={classes}>
+        <div className={style.input}>
             <input
                 type="text"
                 placeholder={props.placeholder}
-                onChange={(e) => props.onChange?.(e)}
+                onChange={(e) => props.onChange?.(e.target.value)}
             />
         </div>
     );
