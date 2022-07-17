@@ -1,9 +1,8 @@
 package main
 
-import (
-	connection "../structs/connection.go"
-)
+import "ftpingo/structs"
 
-func CreateConnection(connection connection.Connection) (Connection, error) {
+func CreateConnection(connection structs.Connection) error {
 
+	return nil
 }
