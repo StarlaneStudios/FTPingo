@@ -5,8 +5,6 @@ import (
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
-
-	_ "github.com/mattn/go-sqlite3"
 )
 
 //go:embed frontend/dist
@@ -17,8 +15,8 @@ func main() {
 	// Create an instance of the app structure
 	app := NewApp()
 
-	// Create application with options
-	err := wails.Run(&options.App{
+	// options for the app
+	options := &options.App{
 		Title:     "FTPingo",
 		Width:     1400,
 		Height:    768,
@@ -28,9 +26,10 @@ func main() {
 		Bind: []interface{}{
 			app,
 		},
-	})
+	}
 
-	if err != nil {
+	// Create application with options
+	if err := wails.Run(options); err != nil {
 		println("Error:", err)
 	}
 }
